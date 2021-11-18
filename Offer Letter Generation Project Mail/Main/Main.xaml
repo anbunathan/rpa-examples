@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.Email="anbunathan.r@gmail.com" this:Main.password="xxxxyyyyyzzzz" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.Email="anbunathan.r@gmail.com" this:Main.password="ugajxpbctlpoljmc" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Email" Type="InArgument(x:String)" />
     <x:Property Name="password" Type="InArgument(x:String)" />
@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>752,4579</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>774,4841</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -98,7 +98,6 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -107,13 +106,13 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="762,4514" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence sap:VirtualizedContainerService.HintSize="762,4776" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="720,4422" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence sap:VirtualizedContainerService.HintSize="720,4684" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="EmpData" />
         <Variable x:TypeArguments="x:String" Name="Template" />
@@ -121,6 +120,7 @@
         <Variable x:TypeArguments="x:String" Name="ProcessedPath" />
         <Variable x:TypeArguments="x:Boolean" Name="SaveAsExists" />
         <Variable x:TypeArguments="x:String" Name="WorkingDir" />
+        <Variable x:TypeArguments="x:String" Name="joiningdate" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -152,32 +152,35 @@
           <InArgument x:TypeArguments="x:String">["D:\Webapp\RPA-Examples\offer-letter\"]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[EmpData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="678,3903" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[EmpData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="678,4165" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="644,3730" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="644,3992" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:CopyFile ContinueOnError="{x:Null}" Destination="[WorkingDir+&quot;Offer Letter Template.docx&quot;]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="602,157" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[Template]" />
-              <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[WorkingDir+&quot;Offer Letter Template.docx&quot;]" sap:VirtualizedContainerService.HintSize="602,3441" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
+              <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[WorkingDir+&quot;Offer Letter Template.docx&quot;]" sap:VirtualizedContainerService.HintSize="602,3703" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
                 <p:WordApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WordDocument">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
                     </ActivityAction.Argument>
-                    <Sequence sap:VirtualizedContainerService.HintSize="568,3332" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <Sequence sap:VirtualizedContainerService.HintSize="568,3594" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="currentdate" />
+                      </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,3240" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,3502" sap2010:WorkflowViewState.IdRef="Sequence_11">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -196,9 +199,25 @@
                           </ui:Activate.Target>
                         </ui:Activate>
                         <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="484,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[row(&quot;Reference&quot;).ToString]" ReplaceAll="True" Search="Reference" />
-                        <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="484,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[row(&quot;Present&quot;).ToString]" ReplaceAll="True" Search="Present" />
+                        <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[currentdate]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[row("Present").ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="484,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[DateTime.Parse(currentdate).ToString(&quot;dd-MM-yyyy&quot;)]" ReplaceAll="True" Search="Present" />
                         <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="484,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Replace="[row(&quot;Student name&quot;).ToString]" ReplaceAll="True" Search="Student name" />
-                        <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="484,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_4" Replace="[row(&quot;Dateofjoining&quot;).ToString]" ReplaceAll="True" Search="Dateofjoining" />
+                        <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[joiningdate]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[row("Dateofjoining").ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="484,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_4" Replace="[DateTime.Parse(joiningdate).ToString(&quot;dd-MM-yyyy&quot;)]" ReplaceAll="True" Search="Dateofjoining" />
                         <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text in Document" sap:VirtualizedContainerService.HintSize="484,162" sap2010:WorkflowViewState.IdRef="WordReplaceText_5" Replace="[row(&quot;Designation&quot;).ToString]" ReplaceAll="True" Search="Designation" />
                         <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="f12" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
                           <ui:SendHotkey.Target>
@@ -224,6 +243,7 @@
                             </ui:Target>
                           </ui:UiElementExists.Target>
                         </ui:UiElementExists>
+                        <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
                         <If Condition="[SaveAsExists]" sap:VirtualizedContainerService.HintSize="484,1692" sap2010:WorkflowViewState.IdRef="If_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -332,7 +352,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:Click>
-                              <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                              <Delay Duration="00:00:15" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
                               <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  File Tab'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
                                 <ui:Click.CursorPosition>
                                   <ui:CursorPosition Position="Center">
